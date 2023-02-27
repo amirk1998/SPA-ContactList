@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { addNewPost } from '../../services/addNewContactService';
 import { getAllContacts } from '../../services/getAllContactService';
+import { useNavigate } from 'react-router-dom';
 
 const NewContact = () => {
+  let navigate = useNavigate();
+
   const [contact, setContact] = useState({
     name: '',
     email: '',
@@ -18,7 +21,8 @@ const NewContact = () => {
     try {
       await addNewPost(contact);
       const { data } = await getAllContacts();
-      setContacts(data);
+      navigate('/');
+      // setContacts(data);
     } catch (error) {
       console.log(error);
     }

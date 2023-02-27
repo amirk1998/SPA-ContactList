@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Contact from '../Components/Contacts/Contact/Contact';
 import { addNewPost } from '../services/addNewContactService';
@@ -9,7 +9,10 @@ const EditContact = () => {
   const [contact, setContact] = useState({});
   let params = useParams();
   const contactID = params.id;
-  // console.log(params);
+  // console.log(contactID);
+
+  const nameRef = useRef();
+  const emailRef = useRef();
 
   useEffect(() => {
     if (contactID) {
@@ -31,8 +34,7 @@ const EditContact = () => {
     try {
       await addNewPost(contact);
       const { data } = await getAllContacts();
-      setContacts(data);
-      // TODO
+      // setContacts(data);
     } catch (error) {
       console.log(error);
     }
@@ -55,6 +57,7 @@ const EditContact = () => {
             name='name'
             value={contact && contact.name}
             onChange={changeHandler}
+            ref={nameRef}
             placeholder='name'
             className='bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
           />
@@ -72,6 +75,7 @@ const EditContact = () => {
             name='email'
             value={contact && contact.email}
             onChange={changeHandler}
+            ref={emailRef}
             placeholder='email'
             className='bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
           />
