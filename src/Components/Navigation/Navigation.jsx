@@ -3,7 +3,7 @@ import withRouter from '../HOC/withRouter';
 
 const items = [
   { name: 'Home', to: '/' },
-  { name: 'New Comment', to: '/new-comment' },
+  { name: 'New Contact', to: '/new-contact' },
 ];
 
 const Navigation = (props) => {

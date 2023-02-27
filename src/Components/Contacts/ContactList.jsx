@@ -48,7 +48,7 @@ const ContactList = () => {
 
     if (contacts && !error) {
       return (renderValue = contacts.map((c) => (
-        <Contact key={c.id} name={c.name} email={c.email} />
+        <Contact key={c.id} id={c.id} name={c.name} email={c.email} />
       )));
     }
 
@@ -56,8 +56,9 @@ const ContactList = () => {
   };
 
   return (
-    <div className=' rounded-xl w-full flex flex-col items-center justify-center mt-8 h-auto'>
-      <NewContact />
+    <div className=' rounded-xl w-full flex flex-col items-center justify-center h-auto'>
+      {/* <NewContact /> */}
+      <h2 className='text-center text-3xl font-semibold'>Contact List</h2>
       <hr className='border border-gray-200 w-1/2 mb-2 mt-4 px-16' />
       {renderContacts()}
     </div>
