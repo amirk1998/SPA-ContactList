@@ -39,14 +39,20 @@ const Contact = ({ name, email, id, deleteHandler }) => {
           <p className='font-normal text-base text-gray-800 '>{email}</p>
         </div>
         <div className='flex flex-row items-center justify-start gap-x-4 mt-1'>
-          <Link
-            key={id}
+          {/* <Link
+            // key={id}
             to={`/contacts/${id}`}
             className='flex items-center justify-center'
           >
             <button>
-              <BiMessageAltDetail className='text-slate-600 hover:text-slate-900 w-6 h-6 mx-4' />
+              <BiMessageAltDetail className='text-slate-600 hover:text-slate-900 w-6 h-6 ' />
             </button>
+          </Link> */}
+          <Link
+            key={id}
+            to={`/edit/${id}`}
+            className='flex items-center justify-center'
+          >
             <button>
               <CiEdit className='text-slate-600 hover:text-slate-900 w-6 h-6' />
             </button>

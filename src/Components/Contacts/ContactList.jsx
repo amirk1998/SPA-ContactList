@@ -60,14 +60,12 @@ const ContactList = () => {
 
     if (contacts && !error) {
       return (renderValue = contacts.map((c) => (
-        // <Contact key={c.id} id={c.id} name={c.name} email={c.email} />
         <Contact
           key={c.id}
           id={c.id}
           name={c.name}
           email={c.email}
           deleteHandler={() => deleteHandler(c.id)}
-          // deleteHandler={() => deleteHandler(c.id)}
         />
       )));
     }

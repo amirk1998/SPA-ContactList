@@ -39,7 +39,7 @@ const NewContact = () => {
   return (
     <div className='rounded-xl w-full flex flex-col items-center justify-center mt-2'>
       <h2 className='text-gray-900 font-semibold text-xl my-4'>Add Contact</h2>
-      <form className='w-1/2 px-16'>
+      <form className='w-full px-16 flex flex-col items-center justify-center'>
         <div className='mb-4'>
           <label
             htmlFor='name'
@@ -53,7 +53,7 @@ const NewContact = () => {
             name='name'
             onChange={changeHandler}
             placeholder='name'
-            className='bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
+            className='bg-gray-200  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5'
           />
         </div>
         <div className='mb-8'>
@@ -69,7 +69,7 @@ const NewContact = () => {
             name='email'
             onChange={changeHandler}
             placeholder='email'
-            className='bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
+            className='bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-[400px] p-2.5'
           />
         </div>
         <div>

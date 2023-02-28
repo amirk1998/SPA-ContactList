@@ -6,7 +6,7 @@ import NotFound from './Pages/NotFound';
 const routes = [
   { path: '/', element: <HomePage /> },
   { path: '/new-contact', element: <NewContact /> },
-  { path: '/contacts/:id', element: <EditContact /> },
+  { path: '/edit/:id', element: <EditContact /> },
   { path: '*', element: <NotFound /> },
 ];
 
