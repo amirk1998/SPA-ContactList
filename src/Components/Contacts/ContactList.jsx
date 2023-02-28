@@ -3,6 +3,7 @@ import { getAllContacts } from '../../services/getAllContactService';
 import Contact from './Contact/Contact';
 import { Link, useNavigate } from 'react-router-dom';
 import { deleteContact } from '../../services/deleteContactService';
+import SearchComponent from '../Search/Search';
 
 const ContactList = () => {
   const [contacts, setContacts] = useState(null);
@@ -77,6 +78,7 @@ const ContactList = () => {
     <div className=' rounded-xl w-full flex flex-col items-center justify-center h-auto'>
       <h2 className='text-center text-3xl font-semibold'>Contact List</h2>
       <hr className='border border-gray-200 w-1/2 mb-2 mt-4 px-16' />
+      <SearchComponent setContacts={setContacts} />
       {renderContacts()}
     </div>
   );
