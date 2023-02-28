@@ -1,5 +1,6 @@
 import { HiUserCircle, HiOutlineTrash, HiOutlinePencil } from 'react-icons/hi2';
 import { CiEdit } from 'react-icons/ci';
+import { BiMessageAltDetail } from 'react-icons/bi';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getOneContact } from '../../../services/getOneContactService';
@@ -43,6 +44,9 @@ const Contact = ({ name, email, id, deleteHandler }) => {
             to={`/contacts/${id}`}
             className='flex items-center justify-center'
           >
+            <button>
+              <BiMessageAltDetail className='text-slate-600 hover:text-slate-900 w-6 h-6 mx-4' />
+            </button>
             <button>
               <CiEdit className='text-slate-600 hover:text-slate-900 w-6 h-6' />
             </button>
