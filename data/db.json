@@ -1,9 +1,9 @@
 {
   "contacts": [
     {
-      "name": "test2",
-      "email": "test3@test3.com",
-      "id": 1
+      "id": 1,
+      "name": "Terry",
+      "email": "atuny0@sohu.com"
     },
     {
       "id": 2,
@@ -149,16 +149,6 @@
       "id": 30,
       "name": "Maurine",
       "email": "kdulyt@umich.edu"
-    },
-    {
-      "name": "testet",
-      "email": "atuny0@sohu.com",
-      "id": 31
-    },
-    {
-      "name": "new",
-      "email": "atuny0@sohu.com",
-      "id": 32
     }
   ]
 }

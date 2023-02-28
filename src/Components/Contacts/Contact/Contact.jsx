@@ -1,35 +1,9 @@
+import { Link } from 'react-router-dom';
 import { HiUserCircle, HiOutlineTrash, HiOutlinePencil } from 'react-icons/hi2';
 import { CiEdit } from 'react-icons/ci';
-import { BiMessageAltDetail } from 'react-icons/bi';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { getOneContact } from '../../../services/getOneContactService';
-import { deleteContact } from '../../../services/deleteContactService';
-import { getAllContacts } from '../../../services/getAllContactService';
+// import { BiMessageAltDetail } from 'react-icons/bi';
+
 const Contact = ({ name, email, id, deleteHandler }) => {
-  let navigate = useNavigate();
-  let params = useParams();
-  // console.log(params);
-  // const contactID = params.id;
-
-  // useEffect(() => {
-  //   if (contactID) {
-  //     getOneContact(contactID)
-  //       .then((res) => setContacts(res.data))
-  //       .catch((error) => console.log(error));
-  //   }
-  // }, [contactID]);
-
-  // const deleteHandler = async () => {
-  //   try {
-  //     await deleteContact(id);
-  //     const { data } = await getAllContacts();
-  //     setContacts(data);
-  //     navigate('/');
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   return (
     <>
       <div className='flex flex-row items-center justify-start w-1/2 px-8 mb-2 '>
@@ -68,4 +42,3 @@ const Contact = ({ name, email, id, deleteHandler }) => {
 };
 
 export default Contact;
-// TODO => Change handlers for routerDOM
