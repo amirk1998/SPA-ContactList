@@ -3,7 +3,9 @@ import { CiEdit } from 'react-icons/ci';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getOneContact } from '../../../services/getOneContactService';
-const Contact = ({ name, email, id }) => {
+import { deleteContact } from '../../../services/deleteContactService';
+import { getAllContacts } from '../../../services/getAllContactService';
+const Contact = ({ name, email, id, deleteHandler }) => {
   let navigate = useNavigate();
   let params = useParams();
   // console.log(params);
@@ -17,6 +19,16 @@ const Contact = ({ name, email, id }) => {
   //   }
   // }, [contactID]);
 
+  // const deleteHandler = async () => {
+  //   try {
+  //     await deleteContact(id);
+  //     const { data } = await getAllContacts();
+  //     setContacts(data);
+  //     navigate('/');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   return (
     <>
       <div className='flex flex-row items-center justify-start w-1/2 px-8 mb-2 '>
@@ -35,7 +47,7 @@ const Contact = ({ name, email, id }) => {
               <CiEdit className='text-slate-600 hover:text-slate-900 w-6 h-6' />
             </button>
           </Link>
-          <button>
+          <button onClick={() => deleteHandler(id)}>
             <HiOutlineTrash className='text-red-500 hover:text-red-700 w-6 h-6' />
           </button>
         </div>
@@ -46,4 +58,4 @@ const Contact = ({ name, email, id }) => {
 };
 
 export default Contact;
-// TODO => Chnage handlers for routerDOM
+// TODO => Change handlers for routerDOM
