@@ -8,10 +8,11 @@ const SearchComponent = ({ setContacts }) => {
   const searchHandler = async (e) => {
     try {
       setSearchValue(e.target.value);
-      const search = e.target.value;
+      const search = e.target.value.trim();
+
       const { data } = await getAllContacts();
       const filteredValue = data.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase())
+        item.name.toLowerCase().includes(search.toString().toLowerCase())
       );
       setContacts(filteredValue);
     } catch (error) {
